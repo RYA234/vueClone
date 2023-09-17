@@ -1,5 +1,7 @@
 import api from "./api";
-const resource = "/tasks";
+const apiPath = import.meta.env.VITE_API_PATH;
+const resource = apiPath + "/tasks";
+
 export const allTasks= () => api.get(resource);
 export const createTask = (task) => api.post(resource,task)
 export const updateTask = (id,task) => api.put(`${resource}/${id}`,task);
